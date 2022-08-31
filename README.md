@@ -1,7 +1,18 @@
 # almond-bread
-A tool for generating images of the Mandelbrot set.
+A tool for generating images of the Mandelbrot set, written in [Futhark], provided
+with the necessary utilities to convert Futhark output into an image.
+
+Currently, this project depends on GNU utilities :(  
+However, with some minor tweaks it can probably work on any machine supported by Futhark.
 
 ## Setup
+
+### Dependencies
+To compile and use this project, you need:
+* make (e.g. [GNU Make](https://www.gnu.org/software/make/))
+* [Python 3.10](https://www.python.org/downloads/release/python-3100/) (may change in the future)
+* An installation of the [Futhark language][Futhark]
+
 Download the repository:
 ```
 git clone https://github.com/ZedKoS/almond-bread.git
@@ -30,8 +41,8 @@ At the moment, you will need to go through two steps in order to generate an ima
      It is recommended that `width/height = rx/ry`, or else the image will be stretched.
    * `iterations` tells the program how many steps to take to generate each pixel. A lower iteration count (e.g. 16) will be faster but will
      not be accurate if the image is zoomed in (i.e. `rx` and `ry` are very small)
-   * `out` is where the program will place the generated file, in the Futhark **Binary Data Format** (BDF). You will to follow
-     step (2) in order to view it as an image.
+   * `out` is where the program will place the generated file, encoded in the Futhark **Binary Data Format** (_**BDF**_). You will
+     need to follow step (2) in order to view it as an image.
  
 2. Locate the generated **BDF** file. Then, inside `almond-bread/`, run `bdf2bmp.py` in the `tools/` folder as follows:
    ```
@@ -49,3 +60,5 @@ To remove the executable, run:
 ```
 make clean
 ```
+
+[Futhark]: https://futhark-lang.org/
