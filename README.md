@@ -2,16 +2,15 @@
 A tool for generating images of the Mandelbrot set, written in [Futhark], provided
 with the necessary utilities to convert Futhark output into an image.
 
-Currently, this project depends on GNU utilities :(  
-However, with some minor tweaks it can probably work on any machine supported by Futhark.
-
 ## Setup
 
 ### Dependencies
 To compile and use this project, you need:
-* make (e.g. [GNU Make](https://www.gnu.org/software/make/))
 * [Python 3.10](https://www.python.org/downloads/release/python-3100/) (may change in the future)
 * An installation of the [Futhark language][Futhark]
+* make, e.g. [GNU Make](https://www.gnu.org/software/make/) (not required - you can easily compile everything manually)
+
+### Compilation
 
 Download the repository:
 ```
